@@ -10,7 +10,7 @@ func! s:init_emojis_once()
   endif
   unlet! s:emojis
   let s:emojis = []
-  for emoji in eval( join( readfile( s:emoji_path ), '' ) )
+  for emoji in json_decode( join( readfile( s:emoji_path ), '' ) )
     if !has_key( emoji, 'emoji' )
       continue
     endif
@@ -50,7 +50,7 @@ func! emoji_complete#complete()
 endfunc
 
 func! s:emoji_expand()
-  augroup emoji_complete_done 
+  augroup emoji_complete_done
     au!
   augroup end
   let line = getline('.')

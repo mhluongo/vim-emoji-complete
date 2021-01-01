@@ -2,6 +2,7 @@ vim-emoji-complete
 ==================
 A VIM plug-in for insert completion of emoji.
 ![vim-emoji-demo](http://i.imgur.com/FWPR9Ry.png)
+
 How to use
 ----------
 Press keys `<C-X><C-E>` in insert mode.
@@ -12,6 +13,10 @@ favorite key mappings.
 let g:emoji_complete_overwrite_standard_keymaps = 0
 imap YOUR_FAVORITE_KEY_MAPPING <Plug>(emoji-start-complete)
 ```
+
+Compatibility
+-------------
+This plugin relies on `json_decode`, requiring NeoVim or Vim 8+.
 
 LICENSE
 -------
